@@ -48,6 +48,7 @@
     <Compile Include="Common\IEvent.cs" />
     <Compile Include="Common\ServiceResult.cs" />
     <Compile Include="Common\StringExtensions.cs" />
+    <Compile Include="Common\StringParser.cs" />
     <Compile Include="Dto\BaseDto.cs" />
     <Compile Include="Dto\Common\BankAccountDto.cs" />
     <Compile Include="Dto\Common\BankAccountTypeDto.cs" />
