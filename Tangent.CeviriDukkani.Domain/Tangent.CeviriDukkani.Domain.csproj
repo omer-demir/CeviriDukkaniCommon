@@ -1,0 +1,187 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5EB6D8DF-8702-4195-B579-D95A7D7B8E7A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Tangent.CeviriDukkani.Domain</RootNamespace>
+    <AssemblyName>Tangent.CeviriDukkani.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=5.0.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.5.0.2\lib\net45\AutoMapper.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\IEvent.cs" />
+    <Compile Include="Common\ServiceResult.cs" />
+    <Compile Include="Common\StringExtensions.cs" />
+    <Compile Include="Dto\BaseDto.cs" />
+    <Compile Include="Dto\Common\BankAccountDto.cs" />
+    <Compile Include="Dto\Common\BankAccountTypeDto.cs" />
+    <Compile Include="Dto\Common\CapacityDto.cs" />
+    <Compile Include="Dto\Common\CityDto.cs" />
+    <Compile Include="Dto\Common\CommentDto.cs" />
+    <Compile Include="Dto\Common\CompanyDto.cs" />
+    <Compile Include="Dto\Common\CompanyTerminologyStatusDto.cs" />
+    <Compile Include="Dto\Common\CountryDto.cs" />
+    <Compile Include="Dto\Common\CurrencyDto.cs" />
+    <Compile Include="Dto\Common\DistrictDto.cs" />
+    <Compile Include="Dto\Common\GenderDto.cs" />
+    <Compile Include="Dto\Common\GeneralDocumentTypeDto.cs" />
+    <Compile Include="Dto\Common\LanguageDto.cs" />
+    <Compile Include="Dto\Common\MembershipTypeDto.cs" />
+    <Compile Include="Dto\Common\MessageDto.cs" />
+    <Compile Include="Dto\Common\OrderStatusDto.cs" />
+    <Compile Include="Dto\Common\OrderTargetLanguageDto.cs" />
+    <Compile Include="Dto\Common\ScoreDto.cs" />
+    <Compile Include="Dto\Common\ServiceTypeDto.cs" />
+    <Compile Include="Dto\Common\SoftwareDto.cs" />
+    <Compile Include="Dto\Common\SpecializationDto.cs" />
+    <Compile Include="Dto\Common\TerminologyDto.cs" />
+    <Compile Include="Dto\Common\TongueDto.cs" />
+    <Compile Include="Dto\Common\TranslationOperationStatusDto.cs" />
+    <Compile Include="Dto\Common\TranslationProgressStatusDto.cs" />
+    <Compile Include="Dto\Common\TranslationQualityDto.cs" />
+    <Compile Include="Dto\Common\UserDocumentTypeDto.cs" />
+    <Compile Include="Dto\Common\UserRoleTypeDto.cs" />
+    <Compile Include="Dto\Common\WorkingTypeDto.cs" />
+    <Compile Include="Dto\Document\DocumentDto.cs" />
+    <Compile Include="Dto\Document\GeneralDocumentDto.cs" />
+    <Compile Include="Dto\Document\TranslationDocumentDto.cs" />
+    <Compile Include="Dto\Document\TranslationDocumentPartDto.cs" />
+    <Compile Include="Dto\Document\UserDocumentDto.cs" />
+    <Compile Include="Dto\Enums\Enums.cs" />
+    <Compile Include="Dto\KeyValueDto.cs" />
+    <Compile Include="Dto\Request\ChangePasswordRequestDto.cs" />
+    <Compile Include="Dto\Request\CreateTranslationOrderRequestDto.cs" />
+    <Compile Include="Dto\Request\LoginRequestDto.cs" />
+    <Compile Include="Dto\Response\DocumentUploadResponseDto.cs" />
+    <Compile Include="Dto\Sale\CustomerDto.cs" />
+    <Compile Include="Dto\Sale\OrderDetailDto.cs" />
+    <Compile Include="Dto\Sale\OrderDto.cs" />
+    <Compile Include="Dto\Sale\PriceListDto.cs" />
+    <Compile Include="Dto\System\RateItemDto.cs" />
+    <Compile Include="Dto\System\TechnologyKnowledgeDto.cs" />
+    <Compile Include="Dto\System\UserAbilityDto.cs" />
+    <Compile Include="Dto\System\UserContactDto.cs" />
+    <Compile Include="Dto\System\UserDto.cs" />
+    <Compile Include="Dto\System\UserLanguageDto.cs" />
+    <Compile Include="Dto\System\UserPaymentDto.cs" />
+    <Compile Include="Dto\System\UserRateDto.cs" />
+    <Compile Include="Dto\System\UserRoleDto.cs" />
+    <Compile Include="Dto\System\UserScoreDto.cs" />
+    <Compile Include="Dto\System\UserScoreTransactionDto.cs" />
+    <Compile Include="Dto\Translation\CompanyDocumentTemplateDto.cs" />
+    <Compile Include="Dto\Translation\CompanyTerminologyDto.cs" />
+    <Compile Include="Dto\Translation\SourceTargetLanguageDto.cs" />
+    <Compile Include="Dto\Translation\TerminologyItemDto.cs" />
+    <Compile Include="Dto\Translation\TranslationOperationDto.cs" />
+    <Compile Include="Dto\Translation\TranslatorDto.cs" />
+    <Compile Include="Entities\BaseEntity.cs" />
+    <Compile Include="Entities\Common\BankAccount.cs" />
+    <Compile Include="Entities\Common\BankAccountType.cs" />
+    <Compile Include="Entities\Common\Capacity.cs" />
+    <Compile Include="Entities\Common\City.cs" />
+    <Compile Include="Entities\Common\Comment.cs" />
+    <Compile Include="Entities\Common\Company.cs" />
+    <Compile Include="Entities\Common\CompanyTerminologyStatus.cs" />
+    <Compile Include="Entities\Common\Country.cs" />
+    <Compile Include="Entities\Common\Currency.cs" />
+    <Compile Include="Entities\Common\District.cs" />
+    <Compile Include="Entities\Common\Gender.cs" />
+    <Compile Include="Entities\Common\GeneralDocumentType.cs" />
+    <Compile Include="Entities\Common\Language.cs" />
+    <Compile Include="Entities\Common\MembershipType.cs" />
+    <Compile Include="Entities\Common\Message.cs" />
+    <Compile Include="Entities\Common\OrderStatus.cs" />
+    <Compile Include="Entities\Common\OrderTargetLanguage.cs" />
+    <Compile Include="Entities\Common\Score.cs" />
+    <Compile Include="Entities\Common\ServiceType.cs" />
+    <Compile Include="Entities\Common\Software.cs" />
+    <Compile Include="Entities\Common\Specialization.cs" />
+    <Compile Include="Entities\Common\Terminology.cs" />
+    <Compile Include="Entities\Common\Tongue.cs" />
+    <Compile Include="Entities\Common\TranslationOperationStatus.cs" />
+    <Compile Include="Entities\Common\TranslationProgressStatus.cs" />
+    <Compile Include="Entities\Common\TranslationQuality.cs" />
+    <Compile Include="Entities\Common\UserDocumentType.cs" />
+    <Compile Include="Entities\Common\UserRoleType.cs" />
+    <Compile Include="Entities\Common\WorkingType.cs" />
+    <Compile Include="Entities\Document\Document.cs" />
+    <Compile Include="Entities\Document\GeneralDocument.cs" />
+    <Compile Include="Entities\Document\TranslationDocument.cs" />
+    <Compile Include="Entities\Document\TranslationDocumentPart.cs" />
+    <Compile Include="Entities\Document\UserDocument.cs" />
+    <Compile Include="Entities\KeyValue.cs" />
+    <Compile Include="Entities\Sale\Customer.cs" />
+    <Compile Include="Entities\Sale\Order.cs" />
+    <Compile Include="Entities\Sale\OrderDetail.cs" />
+    <Compile Include="Entities\Sale\PriceList.cs" />
+    <Compile Include="Entities\System\RateItem.cs" />
+    <Compile Include="Entities\System\TechnologyKnowledge.cs" />
+    <Compile Include="Entities\System\User.cs" />
+    <Compile Include="Entities\System\UserAbility.cs" />
+    <Compile Include="Entities\System\UserContact.cs" />
+    <Compile Include="Entities\System\UserLanguage.cs" />
+    <Compile Include="Entities\System\UserPayment.cs" />
+    <Compile Include="Entities\System\UserRate.cs" />
+    <Compile Include="Entities\System\UserRole.cs" />
+    <Compile Include="Entities\System\UserScore.cs" />
+    <Compile Include="Entities\System\UserScoreTransaction.cs" />
+    <Compile Include="Entities\Translation\CompanyDocumentTemplate.cs" />
+    <Compile Include="Entities\Translation\CompanyTerminology.cs" />
+    <Compile Include="Entities\Translation\SourceTargetLanguage.cs" />
+    <Compile Include="Entities\Translation\TerminologyItem.cs" />
+    <Compile Include="Entities\Translation\TranslationOperation.cs" />
+    <Compile Include="Exceptions\BusinessException.cs" />
+    <Compile Include="Exceptions\DbOperationException.cs" />
+    <Compile Include="Exceptions\ExceptionCodes\Business.ExceptionCodes.cs" />
+    <Compile Include="Exceptions\ExceptionCodes\Db.ExceptionCodes.cs" />
+    <Compile Include="Exceptions\ExceptionCodes\ExceptionCodes.cs" />
+    <Compile Include="Exceptions\GeneralSystemException.cs" />
+    <Compile Include="Mappers\CustomMapperConfiguration.cs" />
+    <Compile Include="Mappers\ICustomMapperConfiguration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
