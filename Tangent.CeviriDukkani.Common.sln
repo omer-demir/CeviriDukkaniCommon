@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangent.CeviriDukkani.Messa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangent.CeviriDukkani.Event", "Tangent.CeviriDukkani.Event\Tangent.CeviriDukkani.Event.csproj", "{F8B0C122-A3EA-4D63-8F2B-3E05BACF7121}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangent.CeviriDukkani.Logging", "Tangent.CeviriDukkani.Logging\Tangent.CeviriDukkani.Logging.csproj", "{09645F64-5888-4585-A286-EE642514713E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F8B0C122-A3EA-4D63-8F2B-3E05BACF7121}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F8B0C122-A3EA-4D63-8F2B-3E05BACF7121}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F8B0C122-A3EA-4D63-8F2B-3E05BACF7121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09645F64-5888-4585-A286-EE642514713E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09645F64-5888-4585-A286-EE642514713E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09645F64-5888-4585-A286-EE642514713E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09645F64-5888-4585-A286-EE642514713E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
