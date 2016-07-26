@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using Tangent.CeviriDukkani.Domain.Dto.Common;
+using Tangent.CeviriDukkani.Domain.Dto.Enums;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
 
 namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
@@ -25,6 +26,7 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
         public int? CompanyDocumentTemplateId { get; set; }
         public virtual CompanyDocumentTemplateDto CompanyDocumentTemplate { get; set; }
 
+        public int TranslationQualityId { get; set; }
         public TranslationQualityDto TranslationQuality { get; set; }
 
         public decimal CalculatedPrice { get; set; }
@@ -34,6 +36,7 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
 
         public virtual List<OrderDetailDto> OrderDetails { get; set; }
 
+        public int OrderStatusId { get; set; }
         public OrderStatusDto OrderStatus { get; set; }
     }
 }

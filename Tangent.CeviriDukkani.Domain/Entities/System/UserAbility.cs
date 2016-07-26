@@ -21,6 +21,7 @@ namespace Tangent.CeviriDukkani.Domain.Entities.System {
         public string MainClients { get; set; }
 
         public List<Specialization> Specializations { get; set; }
+        //public List<UserSpecialization> UserSpecializations { get; set; }
         public List<TechnologyKnowledge> TechnologyKnowledges { get; set; }
 
     }

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Document;
+using Tangent.CeviriDukkani.Domain.Dto.Enums;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 
 namespace Tangent.CeviriDukkani.Domain.Dto.Translation {

@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using Tangent.CeviriDukkani.Domain.Entities.Common;
+using Tangent.CeviriDukkani.Domain.Entities.Translation;
 
 namespace Tangent.CeviriDukkani.Domain.Entities.System
 {
