@@ -80,6 +80,7 @@ namespace Tangent.CeviriDukkani.Data.Model
         public virtual DbSet<UserRole> UserRoles { get; set; }
         public virtual DbSet<UserScore> UserScores { get; set; }
         public virtual DbSet<UserScoreTransaction> UserScoreTransactions { get; set; }
+        public virtual DbSet<MailItem> Mail { get; set; }
 
         #endregion
 

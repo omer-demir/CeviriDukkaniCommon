@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangent.CeviriDukkani.Event
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangent.CeviriDukkani.Logging", "Tangent.CeviriDukkani.Logging\Tangent.CeviriDukkani.Logging.csproj", "{09645F64-5888-4585-A286-EE642514713E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tangent.CeviriDukkani.WebCore", "Tangent.CeviriDukkani.WebCore\Tangent.CeviriDukkani.WebCore.csproj", "{40360CFA-323F-4BCE-B423-582C5A7BB9F6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{09645F64-5888-4585-A286-EE642514713E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09645F64-5888-4585-A286-EE642514713E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09645F64-5888-4585-A286-EE642514713E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40360CFA-323F-4BCE-B423-582C5A7BB9F6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40360CFA-323F-4BCE-B423-582C5A7BB9F6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40360CFA-323F-4BCE-B423-582C5A7BB9F6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40360CFA-323F-4BCE-B423-582C5A7BB9F6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

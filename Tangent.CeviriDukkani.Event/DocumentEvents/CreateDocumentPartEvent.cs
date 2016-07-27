@@ -6,11 +6,12 @@ namespace Tangent.CeviriDukkani.Event.DocumentEvents {
         #region Implementation of IEvent
 
         public Guid Id { get; set; }
+        public int CreatedBy { get; set; }
 
         #endregion
 
-        public int OrderId { get; set; }
         public int TranslationDocumentId { get; set; }
-        public int TranslationQualityId { get; set; }
+        public int PartCount { get; set; }
+        public int OrderId { get; set; }
     }
 }

@@ -71,4 +71,16 @@
         Good,
         Excellent
     }
+
+    public enum MailStatusTypeEnum {
+        Waiting = 0,
+        Sent = 1,
+        Error = 2
+    }
+
+    public enum MailSenderTypeEnum {
+        System = 1,
+        User = 2,
+        Advertisement = 3
+    }
 }

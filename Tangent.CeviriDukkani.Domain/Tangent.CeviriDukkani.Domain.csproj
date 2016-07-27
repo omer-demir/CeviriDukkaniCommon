@@ -145,6 +145,8 @@
     <Compile Include="Entities\Sale\Order.cs" />
     <Compile Include="Entities\Sale\OrderDetail.cs" />
     <Compile Include="Entities\Sale\PriceList.cs" />
+    <Compile Include="Entities\System\MailItem.cs" />
+    <Compile Include="Entities\System\MailTarget.cs" />
     <Compile Include="Entities\System\RateItem.cs" />
     <Compile Include="Entities\System\TechnologyKnowledge.cs" />
     <Compile Include="Entities\System\User.cs" />

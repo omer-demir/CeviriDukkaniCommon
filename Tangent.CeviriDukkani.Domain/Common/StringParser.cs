@@ -75,6 +75,7 @@ namespace Tangent.CeviriDukkani.Domain.Common {
 
             return al;
         }
+
         private List<string> IDontCareHowItEndsParser() {
             string sTemp = SourceText;
             sTemp = sTemp.Replace(Environment.NewLine, " ");
@@ -93,7 +94,8 @@ namespace Tangent.CeviriDukkani.Domain.Common {
 
             return al;
         }
-        public int GenerateCharacterCount() {
+
+        public int GenerateCharacterCount(bool withoutWhitespaces = false) {
             int rtn = 0;
 
             // clean up the string by
@@ -129,7 +131,7 @@ namespace Tangent.CeviriDukkani.Domain.Common {
                     // adding it to the tally
                     if (char.IsLetterOrDigit(sentence[i]) ||
                         char.IsPunctuation(sentence[i]) ||
-                        char.IsWhiteSpace(sentence[i]))
+                        (withoutWhitespaces || char.IsWhiteSpace(sentence[i])))
                         rtn += 1;
                 }
             }
@@ -189,7 +191,7 @@ namespace Tangent.CeviriDukkani.Domain.Common {
             for (int j = 0; j < sentences.Count; j++) {
                 sum += sentences[j].Length;
 
-                if (sum > avgCharCountByPart) {
+                if (sum >= avgCharCountByPart) {
                     result.Add(string.Join(" ", sentences.Skip(lastSentenceCount).Take(j - lastSentenceCount)));
                     lastSentenceCount = j;
                     sum = 0;

@@ -8,6 +8,7 @@ namespace Tangent.CeviriDukkani.Event.OrderEvents {
         #region Implementation of IEvent
 
         public Guid Id { get; set; }
+        public int CreatedBy { get; set; }
 
         #endregion
 
