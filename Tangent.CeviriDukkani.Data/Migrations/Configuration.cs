@@ -36,22 +36,22 @@ namespace Tangent.CeviriDukkani.Data.Migrations {
             };
             context.Districts.AddOrUpdate(a => a.Name, d1, d2, d3);
 
-            var bankAccType1 = new BankAccountType { Name = "Turkish Bank" ,Id=1};
-            var bankAccType2 = new BankAccountType { Name = "Other Country Bank", Id = 2};
+            var bankAccType1 = new BankAccountType { Name = "Turkish Bank", Id = 1 };
+            var bankAccType2 = new BankAccountType { Name = "Other Country Bank", Id = 2 };
             var bankAccType3 = new BankAccountType { Name = "PayPal", Id = 3 };
             context.BankAccountTypes.AddOrUpdate(a => a.Name, bankAccType1, bankAccType2, bankAccType3);
 
             var lang1 = new Language { Name = "Ýngilizce", Id = 1 };
-            var lang2 = new Language { Name = "Türkçe", Id = 2};
+            var lang2 = new Language { Name = "Türkçe", Id = 2 };
             context.Languages.AddOrUpdate(a => a.Name, lang1, lang2);
 
             var term1 = new Terminology { Name = "Genel" };
             var term2 = new Terminology { Name = "Saðlýk" };
             context.Terminologies.AddOrUpdate(a => a.Name, term2, term1);
 
-            var spec1 = new Specialization { Name = "Genel" };
-            var spec2 = new Specialization { Name = "Saðlýk" };
-            context.Specializations.AddOrUpdate(a => a.Name, spec1, spec2);
+            var spec1 = new Specialization { TerminologyId = 1 };
+            var spec2 = new Specialization { TerminologyId = 2 };
+            context.Specializations.AddOrUpdate(a => a.Id, spec1, spec2);
 
             var tongue1 = new Tongue { Name = "Ýngilizce", Id = 1 };
             var tongue2 = new Tongue { Name = "Türkçe", Id = 2 };
@@ -75,9 +75,9 @@ namespace Tangent.CeviriDukkani.Data.Migrations {
             var serviceType3 = new ServiceType { Name = "Review", Id = 3 };
             context.ServiceTypes.AddOrUpdate(a => a.Name, serviceType, serviceType2, serviceType3);
 
-            var userRoleType1 = new UserRoleType { Name = "Admin", Id = 3};
-            var userRoleType2 = new UserRoleType { Name = "Translator", Id = 1};
-            var userRoleType3 = new UserRoleType { Name = "Editor", Id = 2};
+            var userRoleType1 = new UserRoleType { Name = "Admin", Id = 3 };
+            var userRoleType2 = new UserRoleType { Name = "Translator", Id = 1 };
+            var userRoleType3 = new UserRoleType { Name = "Editor", Id = 2 };
             var userRoleType4 = new UserRoleType { Name = "Proof Reader", Id = 4 };
             var userRoleType5 = new UserRoleType { Name = "Freelance Translator", Id = 5 };
             context.UserRoleTypes.AddOrUpdate(a => a.Name, userRoleType1, userRoleType2, userRoleType3, userRoleType4, userRoleType5);
