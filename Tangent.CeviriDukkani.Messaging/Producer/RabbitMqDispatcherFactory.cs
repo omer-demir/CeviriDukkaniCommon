@@ -1,21 +1,24 @@
-﻿using RabbitMQ.Client;
+﻿using log4net;
+using RabbitMQ.Client;
 
 namespace Tangent.CeviriDukkani.Messaging.Producer
 {
     public class RabbitMqDispatcherFactory : IDispatcherFactory
     {
-        private readonly IConnection connection;
-        private readonly string topicExchangeName;
+        private readonly IConnection _connection;
+        private readonly string _topicExchangeName;
+        private readonly ILog _logger;
 
-        public RabbitMqDispatcherFactory(IConnection connection, string topicExchangeName)
+        public RabbitMqDispatcherFactory(IConnection connection, string topicExchangeName,ILog logger)
         {
-            this.connection = connection;
-            this.topicExchangeName = topicExchangeName;
+            this._connection = connection;
+            this._topicExchangeName = topicExchangeName;
+            _logger = logger;
         }
 
         public IDispatchCommits CreateDispatcher()
         {
-            return new RabbitMqCommitDispatcher(connection, topicExchangeName);
+            return new RabbitMqCommitDispatcher(_connection, _topicExchangeName, _logger);
         }
     }
 }

@@ -9,7 +9,6 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using RabbitMQ.Client.Exceptions;
 using RabbitMQ.Client.Framing;
-using Tangent.CeviriDukkani.Logging;
 
 namespace Tangent.CeviriDukkani.Messaging.Consumer {
     public class ConsumerTask {
@@ -17,19 +16,20 @@ namespace Tangent.CeviriDukkani.Messaging.Consumer {
         private readonly IConnection _connection;
         private readonly Delegate _handler;
         private readonly string _exchangeName;
+        private readonly ILog _logger;
         private readonly string _queueName;
         private readonly string _routingKey;
         private readonly Type _eventType;
         private bool _isClosed;
         private CustomQueueingBasicConsumer _consumer;
-        private readonly ILog _logger = CustomLogger.Logger;
 
         private readonly string _errorQueueName;
 
-        public ConsumerTask(IConnection connection, KeyValuePair<string, HandlerInfo> handlerEntry, string exchangeName) {
+        public ConsumerTask(IConnection connection, KeyValuePair<string, HandlerInfo> handlerEntry, string exchangeName,ILog logger) {
             this._connection = connection;
             _handler = handlerEntry.Value.Handler;
             this._exchangeName = exchangeName;
+            _logger = logger;
             _queueName = handlerEntry.Key;
             _routingKey = handlerEntry.Value.EventType.FullName;
             _eventType = handlerEntry.Value.EventType;

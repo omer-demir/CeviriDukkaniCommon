@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using log4net;
 using RabbitMQ.Client;
 using Tangent.CeviriDukkani.Domain.Common;
 
@@ -7,12 +8,14 @@ namespace Tangent.CeviriDukkani.Messaging.Consumer {
     public class RabbitMqSubscription : IConsumer {
         private string _appName;
         private readonly string _exchangeName;
+        private readonly ILog _logger;
         private readonly Dictionary<string, HandlerInfo> _handlerMap = new Dictionary<string, HandlerInfo>();
         private readonly List<ConsumerTask> _consumerTaskList = new List<ConsumerTask>();
         private readonly IConnection _rabbitConnection;
 
-        public RabbitMqSubscription(IConnection rabbitConnection, string exchangeName) {
+        public RabbitMqSubscription(IConnection rabbitConnection, string exchangeName,ILog logger) {
             this._exchangeName = exchangeName;
+            _logger = logger;
             this._rabbitConnection = rabbitConnection;
         }
 
@@ -32,7 +35,7 @@ namespace Tangent.CeviriDukkani.Messaging.Consumer {
 
         public IConsumer Subscribe() {
             foreach (var handlerEntry in _handlerMap) {
-                var consumerTask = new ConsumerTask(_rabbitConnection, handlerEntry, _exchangeName);
+                var consumerTask = new ConsumerTask(_rabbitConnection, handlerEntry, _exchangeName, _logger);
                 _consumerTaskList.Add(consumerTask);
                 consumerTask.Start();
             }

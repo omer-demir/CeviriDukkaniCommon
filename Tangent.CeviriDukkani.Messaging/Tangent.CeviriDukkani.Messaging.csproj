@@ -34,10 +34,6 @@
       <HintPath>..\packages\AutoMapper.5.0.2\lib\net45\AutoMapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Log4Mongo, Version=2.2.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\log4mongo-net.2.2.0\lib\net45\Log4Mongo.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
     <Reference Include="log4net, Version=1.2.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
       <HintPath>..\packages\log4net.2.0.5\lib\net45-full\log4net.dll</HintPath>
       <Private>True</Private>
@@ -78,10 +74,6 @@
     <Reference Include="System.Xml" />
     <Reference Include="Tangent.CeviriDukkani.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.6\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Tangent.CeviriDukkani.Logging, Version=1.0.3.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CeviriDukkaniLogging.1.0.4\lib\Tangent.CeviriDukkani.Logging.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
