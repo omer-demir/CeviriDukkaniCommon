@@ -17,5 +17,7 @@ namespace Tangent.CeviriDukkani.Domain.Dto.System {
         public bool? SwornOrCertified { get; set; }
         public int? CertificateId { get; set; }
         public virtual UserDocumentDto Certificate { get; set; }
+
+        public int UserRateId { get; set; }
     }
 }

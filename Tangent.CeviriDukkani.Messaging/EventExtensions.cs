@@ -1,10 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
+using log4net;
 using Newtonsoft.Json;
 using Tangent.CeviriDukkani.Domain.Common;
+using Tangent.CeviriDukkani.Logging;
 
 namespace Tangent.CeviriDukkani.Messaging {
     public static class EventExtensions {
+
+        private static readonly ILog Logger = CustomLogger.Logger;
 
         public static EventMessage ToEventMessage<T>(this T @event) where T : class, IEvent {
             return new EventMessage {
@@ -30,7 +34,7 @@ namespace Tangent.CeviriDukkani.Messaging {
 
                 @event = JsonConvert.DeserializeObject(payload, type) as IEvent;
             } catch (JsonSerializationException ex) {
-                //logger.ErrorFormat("Cannot deserialize string {0} to event", ex, eventMessage);
+                Logger.ErrorFormat("Cannot deserialize string {0} to event", ex, eventMessage);
             }
 
             return @event;

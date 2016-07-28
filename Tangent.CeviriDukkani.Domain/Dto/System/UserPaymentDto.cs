@@ -2,8 +2,8 @@
 
 namespace Tangent.CeviriDukkani.Domain.Dto.System {
     public class UserPaymentDto : BaseDto {
-        public int BankAccount{ get; set; }
-        public virtual BankAccountDto Account { get; set; }
+        public int BankAccountId { get; set; }
+        public virtual BankAccountDto BankAccount { get; set; }
 
         public string VatTaxNo { get; set; }
 

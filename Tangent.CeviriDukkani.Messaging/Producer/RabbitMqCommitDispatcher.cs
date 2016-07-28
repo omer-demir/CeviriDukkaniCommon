@@ -1,46 +1,67 @@
 ﻿using System.Collections.Generic;
+using System.Configuration;
 using System.Text;
+using log4net;
+using MongoDB.Driver;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
+using Tangent.CeviriDukkani.Logging;
 
-namespace Tangent.CeviriDukkani.Messaging.Producer
-{
-    public class RabbitMqCommitDispatcher : IDispatchCommits
-    {
-        private readonly IConnection connection;
-        private readonly string topicExchangeName;
+namespace Tangent.CeviriDukkani.Messaging.Producer {
+    public class RabbitMqCommitDispatcher : IDispatchCommits {
+        private readonly IConnection _connection;
+        private readonly string _topicExchangeName;
+        private readonly ILog _logger = CustomLogger.Logger;
 
-        public RabbitMqCommitDispatcher(IConnection connection, string topicExchangeName)
-        {
-            this.connection = connection;
-            this.topicExchangeName = topicExchangeName;
+        public RabbitMqCommitDispatcher(IConnection connection, string topicExchangeName) {
+            this._connection = connection;
+            this._topicExchangeName = topicExchangeName;
         }
 
-        public void Dispose()
-        {
+        public void Dispose() {
 
         }
 
-        public void Dispatch(ICollection<EventMessage> events)
-        {
-            using (var channel = connection.CreateModel())
-            {
-                channel.ExchangeDeclare(topicExchangeName, ExchangeType.Topic, true);
+        public void Dispatch(ICollection<EventMessage> events) {
+            PersistingEvents(events);
+
+            using (var channel = _connection.CreateModel()) {
+                channel.ExchangeDeclare(_topicExchangeName, ExchangeType.Topic, true);
                 var basicProperties = channel.CreateBasicProperties();
                 basicProperties.Persistent = true;
 
-                foreach (var eventMessage in events)
-                {
+                _logger.Info("Publishing events...");
+                foreach (var eventMessage in events) {
                     var routingKey = eventMessage.Headers["EventType"].ToString();
                     var payload = ConvertToMessageFormat(eventMessage);
 
-                    channel.BasicPublish(topicExchangeName, routingKey, basicProperties, payload);
+                    channel.BasicPublish(_topicExchangeName, routingKey, basicProperties, payload);
                 }
             }
         }
 
-        private static byte[] ConvertToMessageFormat(EventMessage eventMessage)
-        {
+        private void PersistingEvents(ICollection<EventMessage> events) {
+            _logger.Info("Persisting the events to event store");
+
+            var mongoEventStore = ConfigurationManager.AppSettings["MongoEventStore"];
+            var mongoEventDatabase = ConfigurationManager.AppSettings["MongoEventDatabase"];
+            var mongoEventCollectionName = ConfigurationManager.AppSettings["MongoEventCollection"];
+
+            var mongoConnection = new MongoClient(mongoEventStore);
+            var eventDatabase = mongoConnection.GetDatabase(mongoEventDatabase);
+            var eventCollection =
+                eventDatabase.GetCollection<EventMessage>(mongoEventCollectionName);
+
+            if (eventCollection == null) {
+                eventDatabase.CreateCollection(mongoEventCollectionName);
+                eventCollection =
+                    eventDatabase.GetCollection<EventMessage>(mongoEventCollectionName);
+            }
+
+            eventCollection.InsertMany(events);
+        }
+
+        private static byte[] ConvertToMessageFormat(EventMessage eventMessage) {
             return Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(eventMessage));
         }
     }
