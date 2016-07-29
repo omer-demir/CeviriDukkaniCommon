@@ -5,17 +5,17 @@ using log4net;
 using MongoDB.Driver;
 using Newtonsoft.Json;
 using RabbitMQ.Client;
-using Tangent.CeviriDukkani.Logging;
 
 namespace Tangent.CeviriDukkani.Messaging.Producer {
     public class RabbitMqCommitDispatcher : IDispatchCommits {
         private readonly IConnection _connection;
         private readonly string _topicExchangeName;
-        private readonly ILog _logger = CustomLogger.Logger;
+        private readonly ILog _logger;
 
-        public RabbitMqCommitDispatcher(IConnection connection, string topicExchangeName) {
+        public RabbitMqCommitDispatcher(IConnection connection, string topicExchangeName,ILog logger) {
             this._connection = connection;
             this._topicExchangeName = topicExchangeName;
+            _logger = logger;
         }
 
         public void Dispose() {
