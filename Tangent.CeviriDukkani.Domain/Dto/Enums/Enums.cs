@@ -73,9 +73,10 @@
     }
 
     public enum MailStatusTypeEnum {
-        Waiting = 0,
+        Waiting = 0,        
         Sent = 1,
-        Error = 2
+        Progress = 2,
+        Error = 3
     }
 
     public enum MailSenderTypeEnum {
