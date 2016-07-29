@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DocumentEvents\CreateDocumentPartEvent.cs" />
+    <Compile Include="MailEvents\SendMailEvent.cs" />
     <Compile Include="OrderEvents\CreateOrderDetailEvent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
