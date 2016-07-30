@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Text;
 using log4net;
@@ -12,7 +13,7 @@ namespace Tangent.CeviriDukkani.Messaging.Producer {
         private readonly string _topicExchangeName;
         private readonly ILog _logger;
 
-        public RabbitMqCommitDispatcher(IConnection connection, string topicExchangeName,ILog logger) {
+        public RabbitMqCommitDispatcher(IConnection connection, string topicExchangeName, ILog logger) {
             this._connection = connection;
             this._topicExchangeName = topicExchangeName;
             _logger = logger;
@@ -57,7 +58,10 @@ namespace Tangent.CeviriDukkani.Messaging.Producer {
                 eventCollection =
                     eventDatabase.GetCollection<EventMessage>(mongoEventCollectionName);
             }
-
+            //foreach (var eventMessage in events) {
+            //    Console.WriteLine(eventMessage.ToJson());
+            //    //eventCollection.InsertOne(eventMessage);
+            //}
             eventCollection.InsertMany(events);
         }
 

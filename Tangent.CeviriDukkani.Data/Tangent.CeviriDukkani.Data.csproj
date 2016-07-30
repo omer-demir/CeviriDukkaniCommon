@@ -52,35 +52,28 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Tangent.CeviriDukkani.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.6\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
+      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.14\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\BaseConfiguration.cs" />
-    <Compile Include="Migrations\201607032214546_userroletypeid.cs" />
-    <Compile Include="Migrations\201607032214546_userroletypeid.Designer.cs">
-      <DependentUpon>201607032214546_userroletypeid.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607040208109_initial.cs" />
-    <Compile Include="Migrations\201607040208109_initial.Designer.cs">
-      <DependentUpon>201607040208109_initial.cs</DependentUpon>
+    <Compile Include="Migrations\201607301844252_initial.cs" />
+    <Compile Include="Migrations\201607301844252_initial.Designer.cs">
+      <DependentUpon>201607301844252_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CeviriDukkaniModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607032214546_userroletypeid.resx">
-      <DependentUpon>201607032214546_userroletypeid.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607040208109_initial.resx">
-      <DependentUpon>201607040208109_initial.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201607301844252_initial.resx">
+      <DependentUpon>201607301844252_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

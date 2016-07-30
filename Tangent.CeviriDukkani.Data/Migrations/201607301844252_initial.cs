@@ -1,7 +1,8 @@
-using System.Data.Entity.Migrations;
-
 namespace Tangent.CeviriDukkani.Data.Migrations
 {
+    using System;
+    using System.Data.Entity.Migrations;
+    
     public partial class initial : DbMigration
     {
         public override void Up()
@@ -15,6 +16,12 @@ namespace Tangent.CeviriDukkani.Data.Migrations
                         BankName = c.String(),
                         AccountHolderFullName = c.String(),
                         IBAN = c.String(),
+                        PaypalEmailAddress = c.String(),
+                        BeneficiaryAddress = c.String(),
+                        AccountNumber = c.String(),
+                        SwiftBicCode = c.String(),
+                        CityCountryBank = c.String(),
+                        BankAddress = c.String(),
                         Active = c.Boolean(nullable: false),
                         CreatedAt = c.DateTime(nullable: false),
                         CreatedBy = c.Int(nullable: false),
@@ -213,6 +220,24 @@ namespace Tangent.CeviriDukkani.Data.Migrations
                     {
                         Id = c.Int(nullable: false, identity: true),
                         UserAbilityId = c.Int(nullable: false),
+                        TerminologyId = c.Int(nullable: false),
+                        Active = c.Boolean(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        CreatedBy = c.Int(nullable: false),
+                        UpdatedAt = c.DateTime(),
+                        UpdatedBy = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("Common.Terminology", t => t.TerminologyId, cascadeDelete: false)
+                .ForeignKey("System.UserAbility", t => t.UserAbilityId, cascadeDelete: false)
+                .Index(t => t.UserAbilityId)
+                .Index(t => t.TerminologyId);
+            
+            CreateTable(
+                "Common.Terminology",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
                         Name = c.String(),
                         Description = c.String(),
                         Active = c.Boolean(nullable: false),
@@ -221,9 +246,7 @@ namespace Tangent.CeviriDukkani.Data.Migrations
                         UpdatedAt = c.DateTime(),
                         UpdatedBy = c.Int(),
                     })
-                .PrimaryKey(t => t.Id)
-                .ForeignKey("System.UserAbility", t => t.UserAbilityId, cascadeDelete: false)
-                .Index(t => t.UserAbilityId);
+                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "System.TechnologyKnowledge",
@@ -843,6 +866,42 @@ namespace Tangent.CeviriDukkani.Data.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
+                "System.Mail",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Subject = c.String(),
+                        Message = c.String(),
+                        Status = c.Int(nullable: false),
+                        MailSender = c.Int(nullable: false),
+                        SendTime = c.DateTime(),
+                        Exception = c.String(),
+                        Active = c.Boolean(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        CreatedBy = c.Int(nullable: false),
+                        UpdatedAt = c.DateTime(),
+                        UpdatedBy = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "System.MailTargets",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        MailAddres = c.String(),
+                        Active = c.Boolean(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        CreatedBy = c.Int(nullable: false),
+                        UpdatedAt = c.DateTime(),
+                        UpdatedBy = c.Int(),
+                        MailItem_Id = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("System.Mail", t => t.MailItem_Id)
+                .Index(t => t.MailItem_Id);
+            
+            CreateTable(
                 "Common.Message",
                 c => new
                     {
@@ -974,21 +1033,6 @@ namespace Tangent.CeviriDukkani.Data.Migrations
                 .Index(t => t.LanguageId);
             
             CreateTable(
-                "Common.Terminology",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Name = c.String(),
-                        Description = c.String(),
-                        Active = c.Boolean(nullable: false),
-                        CreatedAt = c.DateTime(nullable: false),
-                        CreatedBy = c.Int(nullable: false),
-                        UpdatedAt = c.DateTime(),
-                        UpdatedBy = c.Int(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
-            CreateTable(
                 "Common.TranslationQuality",
                 c => new
                     {
@@ -1047,6 +1091,23 @@ namespace Tangent.CeviriDukkani.Data.Migrations
                 .Index(t => t.TargetLanguageId);
             
             CreateTable(
+                "Common.TerminologyPriceRate",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        TerminologyId = c.Int(nullable: false),
+                        Rate = c.Decimal(nullable: false, precision: 18, scale: 2),
+                        Active = c.Boolean(nullable: false),
+                        CreatedAt = c.DateTime(nullable: false),
+                        CreatedBy = c.Int(nullable: false),
+                        UpdatedAt = c.DateTime(),
+                        UpdatedBy = c.Int(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("Common.Terminology", t => t.TerminologyId, cascadeDelete: false)
+                .Index(t => t.TerminologyId);
+            
+            CreateTable(
                 "System.UserLanguage",
                 c => new
                     {
@@ -1075,6 +1136,7 @@ namespace Tangent.CeviriDukkani.Data.Migrations
             DropForeignKey("System.UserLanguage", "UserId", "System.User");
             DropForeignKey("System.UserLanguage", "TerminologyId", "Common.Terminology");
             DropForeignKey("System.UserLanguage", "LanguageId", "Common.Language");
+            DropForeignKey("Common.TerminologyPriceRate", "TerminologyId", "Common.Terminology");
             DropForeignKey("Translation.SourceTargetLanguage", "TargetLanguageId", "Common.Language");
             DropForeignKey("Translation.SourceTargetLanguage", "SourceLanguageId", "Common.Language");
             DropForeignKey("Sale.PriceList", "TargetLanguageId", "Common.Language");
@@ -1095,6 +1157,7 @@ namespace Tangent.CeviriDukkani.Data.Migrations
             DropForeignKey("Common.Message", "ToCustomerId", "Sale.Customer");
             DropForeignKey("Common.Message", "FromUserId", "System.User");
             DropForeignKey("Common.Message", "FromCustomerId", "Sale.Customer");
+            DropForeignKey("System.MailTargets", "MailItem_Id", "System.Mail");
             DropForeignKey("Document.GeneralDocument", "GeneralDocumentTypeId", "Common.GeneralDocumentType");
             DropForeignKey("Sale.Customer", "MembershipTypeId", "Common.MembershipType");
             DropForeignKey("Sale.Customer", "CompanyId", "Common.Company");
@@ -1140,6 +1203,7 @@ namespace Tangent.CeviriDukkani.Data.Migrations
             DropForeignKey("System.TechnologyKnowledge", "UserAbilityId", "System.UserAbility");
             DropForeignKey("System.TechnologyKnowledge", "SoftwareId", "Common.Software");
             DropForeignKey("Common.Specialization", "UserAbilityId", "System.UserAbility");
+            DropForeignKey("Common.Specialization", "TerminologyId", "Common.Terminology");
             DropForeignKey("System.UserAbility", "MotherTongueId", "Common.Tongue");
             DropForeignKey("System.UserAbility", "CapacityId", "Common.Capacity");
             DropForeignKey("System.UserAbility", "BilingualTongueId", "Common.Tongue");
@@ -1149,6 +1213,7 @@ namespace Tangent.CeviriDukkani.Data.Migrations
             DropIndex("System.UserLanguage", new[] { "TerminologyId" });
             DropIndex("System.UserLanguage", new[] { "LanguageId" });
             DropIndex("System.UserLanguage", new[] { "UserId" });
+            DropIndex("Common.TerminologyPriceRate", new[] { "TerminologyId" });
             DropIndex("Translation.SourceTargetLanguage", new[] { "TargetLanguageId" });
             DropIndex("Translation.SourceTargetLanguage", new[] { "SourceLanguageId" });
             DropIndex("Sale.PriceList", new[] { "TargetLanguageId" });
@@ -1169,6 +1234,7 @@ namespace Tangent.CeviriDukkani.Data.Migrations
             DropIndex("Common.Message", new[] { "FromCustomerId" });
             DropIndex("Common.Message", new[] { "ToUserId" });
             DropIndex("Common.Message", new[] { "FromUserId" });
+            DropIndex("System.MailTargets", new[] { "MailItem_Id" });
             DropIndex("Document.GeneralDocument", new[] { "GeneralDocumentTypeId" });
             DropIndex("Sale.Customer", new[] { "CompanyId" });
             DropIndex("Sale.Customer", new[] { "MembershipTypeId" });
@@ -1205,6 +1271,7 @@ namespace Tangent.CeviriDukkani.Data.Migrations
             DropIndex("System.UserContact", new[] { "DistrictId" });
             DropIndex("System.TechnologyKnowledge", new[] { "UserAbilityId" });
             DropIndex("System.TechnologyKnowledge", new[] { "SoftwareId" });
+            DropIndex("Common.Specialization", new[] { "TerminologyId" });
             DropIndex("Common.Specialization", new[] { "UserAbilityId" });
             DropIndex("System.UserAbility", new[] { "CapacityId" });
             DropIndex("System.UserAbility", new[] { "BilingualTongueId" });
@@ -1221,15 +1288,17 @@ namespace Tangent.CeviriDukkani.Data.Migrations
             DropIndex("Common.City", new[] { "CountryId" });
             DropIndex("Common.BankAccount", new[] { "BankAccountTypeId" });
             DropTable("System.UserLanguage");
+            DropTable("Common.TerminologyPriceRate");
             DropTable("Translation.SourceTargetLanguage");
             DropTable("Sale.PriceList");
             DropTable("Common.TranslationQuality");
-            DropTable("Common.Terminology");
             DropTable("Common.OrderTargetLanguage");
             DropTable("Common.OrderStatus");
             DropTable("Sale.Order");
             DropTable("Sale.OrderDetail");
             DropTable("Common.Message");
+            DropTable("System.MailTargets");
+            DropTable("System.Mail");
             DropTable("Common.GeneralDocumentType");
             DropTable("Document.GeneralDocument");
             DropTable("Common.MembershipType");
@@ -1262,6 +1331,7 @@ namespace Tangent.CeviriDukkani.Data.Migrations
             DropTable("System.UserContact");
             DropTable("Common.Software");
             DropTable("System.TechnologyKnowledge");
+            DropTable("Common.Terminology");
             DropTable("Common.Specialization");
             DropTable("Common.Tongue");
             DropTable("System.UserAbility");

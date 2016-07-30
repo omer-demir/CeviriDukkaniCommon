@@ -1,9 +1,12 @@
 ﻿
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace Tangent.CeviriDukkani.Domain.Entities.Common {
-    public class TerminologyPriceRate:BaseEntity {
+    [Table("TerminologyPriceRate", Schema = "Common")]
+    public class TerminologyPriceRate : BaseEntity {
         public int TerminologyId { get; set; }
         public virtual Terminology Terminology { get; set; }
         public decimal Rate { get; set; }
-        
+
     }
 }
