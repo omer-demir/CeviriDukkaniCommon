@@ -11,7 +11,7 @@ namespace Tangent.CeviriDukkani.Domain.Entities.System {
         public string Message { get; set; }
         public MailStatusTypeEnum Status { get; set; }
         public MailSenderTypeEnum MailSender { get; set; }
-        public DateTime SendTime { get; set; }
+        public DateTime? SendTime { get; set; }
         public string Exception { get; set; }
     }
 
