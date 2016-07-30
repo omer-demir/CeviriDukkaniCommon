@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Net.Http.Formatting;
 using System.Web.Http;
@@ -43,6 +44,24 @@ namespace Tangent.CeviriDukkani.WebCore.BaseControllers {
                 Content = new ObjectContent(data.GetType(), data, Formatter)
             };
             return response;
+        }
+
+        public int GetUserIdFromHeader() {
+            var values = Request.Headers.GetValues("x-cev-userid").ToList();
+            if (!values.Any()) {
+                return default(int);
+            }
+
+            return int.Parse(values.FirstOrDefault());
+        }
+
+        public string GetUserNameFromHeader() {
+            var values = Request.Headers.GetValues("x-cev-username").ToList();
+            if (!values.Any()) {
+                return default(string);
+            }
+
+            return values.FirstOrDefault();
         }
     }
 }

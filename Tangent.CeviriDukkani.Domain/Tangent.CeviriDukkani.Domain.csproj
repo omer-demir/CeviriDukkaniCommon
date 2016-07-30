@@ -91,6 +91,7 @@
     <Compile Include="Dto\Sale\PriceListDto.cs" />
     <Compile Include="Dto\System\RateItemDto.cs" />
     <Compile Include="Dto\System\TechnologyKnowledgeDto.cs" />
+    <Compile Include="Dto\Common\TerminologyPriceRateDto.cs" />
     <Compile Include="Dto\System\UserAbilityDto.cs" />
     <Compile Include="Dto\System\UserContactDto.cs" />
     <Compile Include="Dto\System\UserDto.cs" />
@@ -150,6 +151,7 @@
     <Compile Include="Entities\System\MailTarget.cs" />
     <Compile Include="Entities\System\RateItem.cs" />
     <Compile Include="Entities\System\TechnologyKnowledge.cs" />
+    <Compile Include="Entities\Common\TerminologyPriceRate.cs" />
     <Compile Include="Entities\System\User.cs" />
     <Compile Include="Entities\System\UserAbility.cs" />
     <Compile Include="Entities\System\UserContact.cs" />
