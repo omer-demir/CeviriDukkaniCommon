@@ -14,16 +14,12 @@ using Tangent.CeviriDukkani.Domain.Entities.Sale;
 using Tangent.CeviriDukkani.Domain.Entities.System;
 using Tangent.CeviriDukkani.Domain.Entities.Translation;
 
-namespace Tangent.CeviriDukkani.Domain.Mappers
-{
-    public class CustomMapperConfiguration : ICustomMapperConfiguration
-    {
+namespace Tangent.CeviriDukkani.Domain.Mappers {
+    public class CustomMapperConfiguration : ICustomMapperConfiguration {
         private readonly IMapper _mapper;
 
-        public CustomMapperConfiguration()
-        {
-            var mapperConfiguration = new MapperConfiguration(a =>
-            {
+        public CustomMapperConfiguration() {
+            var mapperConfiguration = new MapperConfiguration(a => {
                 //Dto -> Entity
 
                 a.CreateMap<BaseDto, BaseEntity>();
@@ -133,7 +129,7 @@ namespace Tangent.CeviriDukkani.Domain.Mappers
                 a.CreateMap<UserDocument, UserDocumentDto>();
 
                 a.CreateMap<Customer, CustomerDto>();
-                a.CreateMap<OrderDetail, OrderDetailDto>();
+                a.CreateMap<OrderDetail, OrderDetailDto>().ForMember(b => b.Order, b => b.Ignore());
                 a.CreateMap<Order, OrderDto>();
                 a.CreateMap<PriceList, PriceListDto>();
 
@@ -162,13 +158,11 @@ namespace Tangent.CeviriDukkani.Domain.Mappers
 
             _mapper = mapperConfiguration.CreateMapper();
         }
-        public TTo GetMapDto<TTo, TFrom>(TFrom entity) where TTo : BaseDto where TFrom : BaseEntity
-        {
+        public TTo GetMapDto<TTo, TFrom>(TFrom entity) where TTo : BaseDto where TFrom : BaseEntity {
             return _mapper.Map<TTo>(entity);
         }
 
-        public TTo GetMapEntity<TTo, TFrom>(TFrom entity) where TTo : BaseEntity where TFrom : BaseDto
-        {
+        public TTo GetMapEntity<TTo, TFrom>(TFrom entity) where TTo : BaseEntity where TFrom : BaseDto {
             return _mapper.Map<TTo>(entity);
         }
     }
