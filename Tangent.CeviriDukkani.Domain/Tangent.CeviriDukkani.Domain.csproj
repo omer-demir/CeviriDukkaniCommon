@@ -85,6 +85,7 @@
     <Compile Include="Dto\Request\LoginRequestDto.cs" />
     <Compile Include="Dto\Request\QueryRequestDto.cs" />
     <Compile Include="Dto\Request\SendMailRequestDto.cs" />
+    <Compile Include="Dto\Request\UpdateDocumentPartContentRequestDto.cs" />
     <Compile Include="Dto\Response\DocumentUploadResponseDto.cs" />
     <Compile Include="Dto\Sale\CustomerDto.cs" />
     <Compile Include="Dto\Sale\OrderDetailDto.cs" />
