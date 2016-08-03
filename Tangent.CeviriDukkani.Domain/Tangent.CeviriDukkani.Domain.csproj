@@ -43,6 +43,7 @@
     <Compile Include="Common\ServiceResult.cs" />
     <Compile Include="Common\StringExtensions.cs" />
     <Compile Include="Common\StringParser.cs" />
+    <Compile Include="Dto\Audit\DocumentAuditDto.cs" />
     <Compile Include="Dto\BaseDto.cs" />
     <Compile Include="Dto\Common\BankAccountDto.cs" />
     <Compile Include="Dto\Common\BankAccountTypeDto.cs" />
@@ -137,6 +138,7 @@
     <Compile Include="Entities\Common\UserDocumentType.cs" />
     <Compile Include="Entities\Common\UserRoleType.cs" />
     <Compile Include="Entities\Common\WorkingType.cs" />
+    <Compile Include="Entities\Audit\DocumentAudit.cs" />
     <Compile Include="Entities\Document\Document.cs" />
     <Compile Include="Entities\Document\GeneralDocument.cs" />
     <Compile Include="Entities\Document\TranslationDocument.cs" />

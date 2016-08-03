@@ -1,11 +1,13 @@
 ﻿using AutoMapper;
 using Tangent.CeviriDukkani.Domain.Dto;
+using Tangent.CeviriDukkani.Domain.Dto.Audit;
 using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Document;
 using Tangent.CeviriDukkani.Domain.Dto.Sale;
 using Tangent.CeviriDukkani.Domain.Dto.System;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
 using Tangent.CeviriDukkani.Domain.Entities;
+using Tangent.CeviriDukkani.Domain.Entities.Audit;
 using Tangent.CeviriDukkani.Domain.Entities.Common;
 using Tangent.CeviriDukkani.Domain.Entities.Document;
 using Tangent.CeviriDukkani.Domain.Entities.Sale;
@@ -85,6 +87,8 @@ namespace Tangent.CeviriDukkani.Domain.Mappers
                 a.CreateMap<SourceTargetLanguageDto, SourceTargetLanguage>();
                 a.CreateMap<TerminologyItemDto, TerminologyItem>();
                 a.CreateMap<TranslationOperationDto, TranslationOperation>();
+
+                a.CreateMap<DocumentAuditDto, DocumentAudit>();
                 //a.CreateMap<TranslatorDto, Translator>();
 
                 //Entity -> Dto
@@ -151,6 +155,8 @@ namespace Tangent.CeviriDukkani.Domain.Mappers
                 a.CreateMap<TerminologyItem, TerminologyItemDto>();
                 a.CreateMap<TranslationOperation, TranslationOperationDto>();
                 //a.CreateMap<Translator, TranslatorDto>();
+
+                a.CreateMap<DocumentAudit, DocumentAuditDto>();
 
             });
 
