@@ -58,10 +58,6 @@ namespace Tangent.CeviriDukkani.Messaging.Producer {
                 eventCollection =
                     eventDatabase.GetCollection<EventMessage>(mongoEventCollectionName);
             }
-            //foreach (var eventMessage in events) {
-            //    Console.WriteLine(eventMessage.ToJson());
-            //    //eventCollection.InsertOne(eventMessage);
-            //}
             eventCollection.InsertMany(events);
         }
 
