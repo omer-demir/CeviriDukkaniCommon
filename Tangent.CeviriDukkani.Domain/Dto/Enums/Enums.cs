@@ -84,4 +84,13 @@
         User = 2,
         Advertisement = 3
     }
+
+    public enum MailType
+    {
+        Register,
+        ForgetPassword,
+        ResetPassword,
+        UserActivation,
+        Welcome
+    }
 }
