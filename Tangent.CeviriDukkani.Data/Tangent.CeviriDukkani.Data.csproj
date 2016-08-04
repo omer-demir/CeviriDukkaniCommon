@@ -62,6 +62,10 @@
     <Compile Include="Migrations\201607301844252_initial.Designer.cs">
       <DependentUpon>201607301844252_initial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608041819223_new-tabs.cs" />
+    <Compile Include="Migrations\201608041819223_new-tabs.Designer.cs">
+      <DependentUpon>201608041819223_new-tabs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CeviriDukkaniModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607301844252_initial.resx">
       <DependentUpon>201607301844252_initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608041819223_new-tabs.resx">
+      <DependentUpon>201608041819223_new-tabs.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
