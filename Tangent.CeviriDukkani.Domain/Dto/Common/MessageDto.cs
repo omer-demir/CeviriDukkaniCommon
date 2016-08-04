@@ -17,5 +17,7 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Common
         public DateTime? ReadDate { get; set; }
         public bool FromStatus { get; set; }
         public bool ToStatus { get; set; }
+        public string Subject { get; set; }
+
     }
 }
