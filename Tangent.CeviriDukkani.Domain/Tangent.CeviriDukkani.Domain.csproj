@@ -83,6 +83,7 @@
     <Compile Include="Dto\Request\ChangePasswordRequestDto.cs" />
     <Compile Include="Dto\Request\CreateTranslationOrderRequestDto.cs" />
     <Compile Include="Dto\Request\LoginRequestDto.cs" />
+    <Compile Include="Dto\Request\MessageRequestDto.cs" />
     <Compile Include="Dto\Request\SendMailRequestDto.cs" />
     <Compile Include="Dto\Response\DocumentUploadResponseDto.cs" />
     <Compile Include="Dto\Sale\CustomerDto.cs" />
