@@ -85,7 +85,7 @@
         Advertisement = 3
     }
 
-    public enum MailType
+    public enum MailTypeEnum
     {
         Register,
         ForgetPassword,
