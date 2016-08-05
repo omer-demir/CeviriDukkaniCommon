@@ -85,6 +85,7 @@
     <Compile Include="Dto\Request\ChangePasswordRequestDto.cs" />
     <Compile Include="Dto\Request\CreateTranslationOrderRequestDto.cs" />
     <Compile Include="Dto\Request\FinishDocumentPartRequestDto.cs" />
+    <Compile Include="Dto\Request\GetTranslationProgressContentRequest.cs" />
     <Compile Include="Dto\Request\LoginRequestDto.cs" />
     <Compile Include="Dto\Request\QueryRequestDto.cs" />
     <Compile Include="Dto\Request\MessageRequestDto.cs" />
