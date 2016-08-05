@@ -1,22 +1,31 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using Tangent.CeviriDukkani.Domain.Dto.Enums;
 
 namespace Tangent.CeviriDukkani.Domain.Dto.System
 {
-    public class UserScoreDto : BaseDto {
+    public class UserScoreDto : BaseDto
+    {
+
+        public UserScoreDto()
+        {
+            UserScoreTransactions = new List<UserScoreTransactionDto>();
+        }
+
         //TODO bunu nasıl quality olarak ifade edicez?
         //ComputedColumn
-        public double AverageTranslatingScore {
-            get { return UserScoreTransactions.Average(a => GetScoreValue(a.TranslatingScore)); }
+        public double AverageTranslatingScore
+        {
+            get { return UserScoreTransactions.Count == 0 ? 0 : UserScoreTransactions.Average(a => GetScoreValue(a.TranslatingScore)); }
             private set { }
         }
-        public double AverageEditingScore {
-            get { return UserScoreTransactions.Average(a => GetScoreValue(a.EditingScore)); }
+        public double AverageEditingScore
+        {
+            get { return UserScoreTransactions.Count == 0 ? 0 : UserScoreTransactions.Average(a => GetScoreValue(a.EditingScore)); }
             private set { }
         }
-        public double AverageProofReadingScore {
-            get { return UserScoreTransactions.Average(a=>GetScoreValue(a.ProofReadingScore)); }
+        public double AverageProofReadingScore
+        {
+            get { return UserScoreTransactions.Count == 0 ? 0 : UserScoreTransactions.Average(a => GetScoreValue(a.ProofReadingScore)); }
             private set { }
         }
 
