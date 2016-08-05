@@ -7,6 +7,11 @@ namespace Tangent.CeviriDukkani.Domain.Entities.System
     [Table("UserScore", Schema = "System")]
     public class UserScore : BaseEntity
     {
+        public UserScore()
+        {
+            UserScoreTransactions = new List<UserScoreTransaction>();
+        }
+
         //TODO bunu nasıl quality olarak ifade edicez?
         //ComputedColumn
         public double AverageTranslatingScore {
@@ -21,6 +26,8 @@ namespace Tangent.CeviriDukkani.Domain.Entities.System
             get { return UserScoreTransactions.Average(a=>GetScoreValue(a.ProofReadingScore)); }
             private set { }
         }
+
+
 
         public List<UserScoreTransaction> UserScoreTransactions { get; set; }
 
