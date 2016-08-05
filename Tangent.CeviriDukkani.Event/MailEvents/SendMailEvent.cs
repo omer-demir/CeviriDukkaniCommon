@@ -13,7 +13,7 @@ namespace Tangent.CeviriDukkani.Event.MailEvents
         public int CreatedBy { get; set; }
 
         #endregion
-        public MailStatusTypeEnum MailType { get; set; }
+        public MailTypeEnum MailType { get; set; }
         public object Data { get; set; }
         public List<string> To { get; set; }
     }
