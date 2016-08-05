@@ -5,7 +5,7 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Request
 {
     public class SendMailRequestDto
     {
-        public MailType MailType { get; set; }
+        public MailTypeEnum MailType { get; set; }
         public object Data { get; set; }
         public List<string> To { get; set; }
     }

@@ -96,6 +96,7 @@
     <Compile Include="Dto\Sale\OrderDetailDto.cs" />
     <Compile Include="Dto\Sale\OrderDto.cs" />
     <Compile Include="Dto\Sale\PriceListDto.cs" />
+    <Compile Include="Dto\System\MailDataDto.cs" />
     <Compile Include="Dto\System\RateItemDto.cs" />
     <Compile Include="Dto\System\TechnologyKnowledgeDto.cs" />
     <Compile Include="Dto\Common\TerminologyPriceRateDto.cs" />
