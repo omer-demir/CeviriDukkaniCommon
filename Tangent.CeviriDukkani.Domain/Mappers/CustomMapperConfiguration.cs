@@ -121,7 +121,7 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
                 a.CreateMap<UserRoleType, UserRoleTypeDto>();
                 a.CreateMap<WorkingType, WorkingTypeDto>();
                 a.CreateMap<Tongue, TongueDto>();
-                a.CreateMap<OrderTargetLanguage, OrderTargetLanguageDto>();
+                a.CreateMap<OrderTargetLanguage, OrderTargetLanguageDto>().ForMember(b=>b.Order,b=>b.Ignore());
 
                 a.CreateMap<Document, DocumentDto>();
                 a.CreateMap<TranslationDocumentPart, TranslationDocumentPartDto>();
@@ -131,7 +131,7 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
 
                 a.CreateMap<Customer, CustomerDto>();
                 a.CreateMap<OrderDetail, OrderDetailDto>().ForMember(b => b.Order, b => b.Ignore());
-                a.CreateMap<Order, OrderDto>().ForMember(c => c.TargetLanguages.Select(b => b.Order), x => x.Ignore());
+                a.CreateMap<Order, OrderDto>();
                 a.CreateMap<PriceList, PriceListDto>();
 
                 a.CreateMap<RateItem, RateItemDto>();
