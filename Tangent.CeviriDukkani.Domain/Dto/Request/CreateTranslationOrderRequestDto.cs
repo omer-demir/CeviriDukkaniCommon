@@ -15,6 +15,7 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Request {
         public int? CompanyDocumentTemplateId { get; set; }
         public int TranslationQualityId { get; set; }   
         public int CustomerId { get; set; }
+        public string CampaignItemCode { get; set; }
 
     }
 }

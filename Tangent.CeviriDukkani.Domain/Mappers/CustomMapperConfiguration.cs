@@ -1,4 +1,5 @@
-﻿using AutoMapper;
+﻿using System.Linq;
+using AutoMapper;
 using Tangent.CeviriDukkani.Domain.Dto;
 using Tangent.CeviriDukkani.Domain.Dto.Audit;
 using Tangent.CeviriDukkani.Domain.Dto.Common;
@@ -85,7 +86,7 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
                 a.CreateMap<TranslationOperationDto, TranslationOperation>();
 
                 a.CreateMap<DocumentAuditDto, DocumentAudit>();
-                //a.CreateMap<TranslatorDto, Translator>();
+                a.CreateMap<CampaignItemDto, CampaignItem>();
 
                 //Entity -> Dto
 
@@ -130,7 +131,7 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
 
                 a.CreateMap<Customer, CustomerDto>();
                 a.CreateMap<OrderDetail, OrderDetailDto>().ForMember(b => b.Order, b => b.Ignore());
-                a.CreateMap<Order, OrderDto>();
+                a.CreateMap<Order, OrderDto>().ForMember(c => c.TargetLanguages.Select(b => b.Order), x => x.Ignore());
                 a.CreateMap<PriceList, PriceListDto>();
 
                 a.CreateMap<RateItem, RateItemDto>();
@@ -153,6 +154,7 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
                 //a.CreateMap<Translator, TranslatorDto>();
 
                 a.CreateMap<DocumentAudit, DocumentAuditDto>();
+                a.CreateMap<CampaignItem, CampaignItemDto>();
 
             });
 

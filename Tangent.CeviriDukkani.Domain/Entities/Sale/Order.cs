@@ -40,5 +40,8 @@ namespace Tangent.CeviriDukkani.Domain.Entities.Sale {
 
         public int OrderStatusId { get; set; }
         public OrderStatus OrderStatus { get; set; }
+
+        public int? CampaignItemId { get; set; }
+        public virtual CampaignItem CampaignItem { get; set; }
     }
 }

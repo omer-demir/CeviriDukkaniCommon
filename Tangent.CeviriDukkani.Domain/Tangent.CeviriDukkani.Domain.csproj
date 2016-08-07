@@ -94,6 +94,7 @@
     <Compile Include="Dto\Request\SendMailRequestDto.cs" />
     <Compile Include="Dto\Request\UpdateDocumentPartContentRequestDto.cs" />
     <Compile Include="Dto\Response\DocumentUploadResponseDto.cs" />
+    <Compile Include="Dto\Sale\CampaignItemDto.cs" />
     <Compile Include="Dto\Sale\CustomerDto.cs" />
     <Compile Include="Dto\Sale\OrderDetailDto.cs" />
     <Compile Include="Dto\Sale\OrderDto.cs" />
@@ -154,6 +155,7 @@
     <Compile Include="Entities\Document\TranslationDocumentPart.cs" />
     <Compile Include="Entities\Document\UserDocument.cs" />
     <Compile Include="Entities\KeyValue.cs" />
+    <Compile Include="Entities\Sale\CampaignItem.cs" />
     <Compile Include="Entities\Sale\Customer.cs" />
     <Compile Include="Entities\Sale\Order.cs" />
     <Compile Include="Entities\Sale\OrderDetail.cs" />

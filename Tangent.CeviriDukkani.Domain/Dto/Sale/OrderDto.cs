@@ -15,7 +15,7 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
         public int SourceLanguageId { get; set; }
         public virtual LanguageDto SourceLanguage { get; set; }
 
-        public virtual List<LanguageDto> TargetLanguages { get; set; }
+        public virtual List<OrderTargetLanguageDto> TargetLanguages { get; set; }
 
         public int TerminologyId { get; set; }
         public virtual TerminologyDto Terminology { get; set; }
@@ -38,5 +38,8 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
 
         public int OrderStatusId { get; set; }
         public OrderStatusDto OrderStatus { get; set; }
+
+        public int? CampaignItemId { get; set; }
+        public virtual CampaignItemDto CampaignItem { get; set; }
     }
 }
