@@ -11,5 +11,8 @@
         public const string PassiveUser = "205";
         public const string NoOrderWithSpecifiedId = "301";
         public const string EmailCouldntSendToUser = "320";
+        public const string UnableRetrieveTranslatorsForOrder = "321";
+        public const string UnableRetrieveEditorsForOrder = "322";
+        public const string UnableRetrieveProofReadersForOrder = "323";
     }
 }
