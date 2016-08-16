@@ -2,7 +2,7 @@
 {
     public enum UserRoleTypeEnum
     {
-        Translator = 1 ,
+        Translator = 1,
         Editor,
         Admin,
         ProofReader,
@@ -11,7 +11,7 @@
 
     public enum GenderEnum {
         Male = 1,
-        Female 
+        Female
     }
 
     public enum TranslationOperationStatusEnum {
@@ -46,7 +46,7 @@
     }
 
     public enum CompanyTerminologyStatusEnum {
-        ReadyToUse=1,
+        ReadyToUse = 1,
         RequestedRevisionFromCoordinator,
         RevisedByCoordinator,
         RequestedRevisionFromClient,
@@ -54,7 +54,7 @@
     }
 
     public enum OrderStatusEnum {
-        Created=1,
+        Created = 1,
         Approved,
         Rejected,
         RevisionNeeded,
@@ -65,7 +65,7 @@
     }
 
     public enum ScoreEnum {
-        Poor=1,
+        Poor = 1,
         Decent,
         Average,
         Good,
@@ -73,7 +73,7 @@
     }
 
     public enum MailStatusTypeEnum {
-        Waiting = 0,        
+        Waiting = 0,
         Sent = 1,
         Progress = 2,
         Error = 3
@@ -87,10 +87,33 @@
 
     public enum MailTypeEnum
     {
-        Register,
-        ForgetPassword,
-        ResetPassword,
-        UserActivation,
-        Welcome
+        AdminTestOnayla,
+        BireyselRegistration,
+        CeviriTamamlandi,
+        Dekont,
+        EditorKontrolleriBitirdi,
+        EmailConfirmation,
+        IhaleAlindi,
+        IhaleyeIsAc,
+        InsanKaynaklari,
+        KontrolBekleyenDosyalar,
+        KurumsalRegistration,
+        MusteriRevizeGonder,
+        OdemeAlindi,
+        RevizeFinal,
+        SiparisIptal,
+        SiparisTamamlandi,
+        Siparis,
+        TeklifCevabi,
+        TeklifRedAciklamasi,
+        TeklifRededildi,
+        TeklifTalebi,
+        TercumanIsGonder,
+        TercumanSiparisIptal,
+        TercumeyiBitirdim,
+        TestGonder,
+        TestTercumeOnaylandi,
+        TestTercumeRedEdildi,
+        TranslatorWelcomingMail
     }
 }
