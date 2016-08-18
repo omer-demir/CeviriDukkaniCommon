@@ -302,31 +302,51 @@ namespace Tangent.CeviriDukkani.Domain.Dto.System
         }
         public class TercumanIsGonder
         {
-            public string UserName { get; set; }
+            public string adsoyad { get; set; }
+            public string KaynakDil { get; set; }
+            public string HedefDil { get; set; }
+            public int ceviriId { get; set; }
+            public string tercumanUcreti { get; set; }
+            public DateTime teslimTarihi { get; set; }
+            public string dokuman { get; set; }
+            public string siparisNotu { get; set; }
+            public string TercumanOzelNot { get; set; }
+            public bool yeminliTercume { get; set; }
+            public string TerminolojiDosyasi { get; set; }
+
         }
         public class TercumanSiparisIptal
         {
-            public string UserName { get; set; }
+            public string ceviritipi { get; set; }
+            public string KaynakDil { get; set; }
+            public string HedefDil { get; set; }
+            public string alan { get; set; }
+            public int ceviriId { get; set; }
+            public DateTime iptalTarihi { get; set; }
+            public string dokuman { get; set; }
+            public string siparisNotu { get; set; }
         }
         public class TercumeyiBitirdim
-        {
-            public string UserName { get; set; }
+        {   
         }
         public class TestGonder
         {
-            public string UserName { get; set; }
+            public string adsoyad { get; set; }
+            public string KaynakDil { get; set; }
+            public string HedefDil { get; set; }
+            public string dokuman { get; set; }
+            public string tercumesi { get; set; }
+            public int testcevapid { get; set; }
         }
         public class TestTercumeOnaylandi
         {
-            public string UserName { get; set; }
         }
         public class TestTercumeRedEdildi
         {
-            public string UserName { get; set; }
         }
         public class TranslatorWelcomingMail
         {
-            public string UserName { get; set; }
+            public string adsoyad { get; set; }
         }
 
         public class Register
