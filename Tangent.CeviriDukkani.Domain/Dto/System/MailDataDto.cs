@@ -100,10 +100,10 @@ namespace Tangent.CeviriDukkani.Domain.Dto.System
             public string siparisNotu { get; set; }
             public string TerminolojiDosyasi { get; set; }
         }
-        public class KontrolBekleyenDosyalar
-        {
+        //public class KontrolBekleyenDosyalar
+        //{
            
-        }
+        //}
         public class KurumsalRegistration
         {
             public string adsoyad { get; set; }
@@ -326,9 +326,9 @@ namespace Tangent.CeviriDukkani.Domain.Dto.System
             public string dokuman { get; set; }
             public string siparisNotu { get; set; }
         }
-        public class TercumeyiBitirdim
-        {   
-        }
+        //public class TercumeyiBitirdim
+        //{   
+        //}
         public class TestGonder
         {
             public string adsoyad { get; set; }
@@ -338,43 +338,15 @@ namespace Tangent.CeviriDukkani.Domain.Dto.System
             public string tercumesi { get; set; }
             public int testcevapid { get; set; }
         }
-        public class TestTercumeOnaylandi
-        {
-        }
-        public class TestTercumeRedEdildi
-        {
-        }
+        //public class TestTercumeOnaylandi
+        //{
+        //}
+        //public class TestTercumeRedEdildi
+        //{
+        //}
         public class TranslatorWelcomingMail
         {
             public string adsoyad { get; set; }
-        }
-
-        public class Register
-        {
-            public string UserName { get; set; }
-            public string EMail { get; set; }
-            public string Pass { get; set; }
-        }
-
-        public class ResetPassword
-        {
-            public string UserName { get; set; }
-            public string ResetLink { get; set; }
-
-        }
-
-        public class ForgetPassword
-        {
-            public string UserName { get; set; }
-            public string EMail { get; set; }
-            public string Pass { get; set; }
-        }
-
-        public class UserActivation
-        {
-            public string UserName { get; set; }
-            public string RegisterLink { get; set; }
-            public string Comment { get; set; }
         }
     }
 }
