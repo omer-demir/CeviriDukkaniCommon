@@ -52,7 +52,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Tangent.CeviriDukkani.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.34\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
+      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.40\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201608061907075_campaign.cs" />
     <Compile Include="Migrations\201608061907075_campaign.Designer.cs">
       <DependentUpon>201608061907075_campaign.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608181944357_configuration-table.cs" />
+    <Compile Include="Migrations\201608181944357_configuration-table.Designer.cs">
+      <DependentUpon>201608181944357_configuration-table.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CeviriDukkaniModel.cs" />
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608061907075_campaign.resx">
       <DependentUpon>201608061907075_campaign.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608181944357_configuration-table.resx">
+      <DependentUpon>201608181944357_configuration-table.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

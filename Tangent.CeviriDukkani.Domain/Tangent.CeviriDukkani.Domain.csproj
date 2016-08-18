@@ -52,6 +52,7 @@
     <Compile Include="Dto\Common\CommentDto.cs" />
     <Compile Include="Dto\Common\CompanyDto.cs" />
     <Compile Include="Dto\Common\CompanyTerminologyStatusDto.cs" />
+    <Compile Include="Dto\Common\ConfigurationDto.cs" />
     <Compile Include="Dto\Common\CountryDto.cs" />
     <Compile Include="Dto\Common\CurrencyDto.cs" />
     <Compile Include="Dto\Common\DistrictDto.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Entities\Common\Comment.cs" />
     <Compile Include="Entities\Common\Company.cs" />
     <Compile Include="Entities\Common\CompanyTerminologyStatus.cs" />
+    <Compile Include="Entities\Common\Configuration.cs" />
     <Compile Include="Entities\Common\Country.cs" />
     <Compile Include="Entities\Common\Currency.cs" />
     <Compile Include="Entities\Common\District.cs" />
