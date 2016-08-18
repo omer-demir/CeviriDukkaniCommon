@@ -46,7 +46,7 @@ namespace Tangent.CeviriDukkani.Data.Model
         public virtual DbSet<Specialization> Specializations { get; set; }
         public virtual DbSet<Tongue> Tongues { get; set; }
         public virtual DbSet<TerminologyPriceRate> TerminologyPriceRate { get; set; }
-
+        public virtual DbSet<Configuration> Configurations { get; set; }
 
         #endregion
 
