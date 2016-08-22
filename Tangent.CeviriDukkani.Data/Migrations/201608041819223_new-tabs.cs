@@ -7,12 +7,12 @@ namespace Tangent.CeviriDukkani.Data.Migrations
     {
         public override void Up()
         {
-            AddColumn("Common.Message", "Subject", c => c.String());
+            //AddColumn("Common.Message", "Subject", c => c.String());
         }
         
         public override void Down()
         {
-            DropColumn("Common.Message", "Subject");
+            //DropColumn("Common.Message", "Subject");
         }
     }
 }
