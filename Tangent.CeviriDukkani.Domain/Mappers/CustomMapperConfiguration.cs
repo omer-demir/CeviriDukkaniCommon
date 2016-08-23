@@ -87,7 +87,7 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
 
                 a.CreateMap<DocumentAuditDto, DocumentAudit>();
                 a.CreateMap<CampaignItemDto, CampaignItem>();
-
+                a.CreateMap<CompanyPriceOfferDto, CompanyPriceOffer>();
                 //Entity -> Dto
 
                 a.CreateMap<BaseEntity, BaseDto>();
@@ -155,6 +155,7 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
 
                 a.CreateMap<DocumentAudit, DocumentAuditDto>();
                 a.CreateMap<CampaignItem, CampaignItemDto>();
+                a.CreateMap<CompanyPriceOffer, CompanyPriceOfferDto>();
 
             });
 
