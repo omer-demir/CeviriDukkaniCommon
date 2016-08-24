@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Tangent.CeviriDukkani.Domain.Dto.Common;
 using Tangent.CeviriDukkani.Domain.Dto.Enums;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
@@ -41,5 +42,14 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
 
         public int? CampaignItemId { get; set; }
         public virtual CampaignItemDto CampaignItem { get; set; }
+
+        public string TargetLanguagesAsString {
+            get {
+                if (TargetLanguages != null && TargetLanguages.Any()) {
+                    return string.Join(",", TargetLanguages.Select(a => a.Language.Name));
+                }
+                return "";
+            }
+        }
     }
 }

@@ -66,6 +66,7 @@ namespace Tangent.CeviriDukkani.Data.Model
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<PriceList> PriceLists { get; set; }
         public virtual DbSet<CampaignItem> CampaignItems { get; set; }
+        public virtual DbSet<CompanyPriceOffer> CompanyPriceOffers { get; set; }
 
         #endregion
 
