@@ -47,6 +47,7 @@ namespace Tangent.CeviriDukkani.Data.Model
         public virtual DbSet<Tongue> Tongues { get; set; }
         public virtual DbSet<TerminologyPriceRate> TerminologyPriceRate { get; set; }
         public virtual DbSet<Configuration> Configurations { get; set; }
+        public virtual DbSet<Equipment> Equipments { get; set; }
 
         #endregion
 
@@ -62,11 +63,14 @@ namespace Tangent.CeviriDukkani.Data.Model
         #region Sale
 
         public virtual DbSet<Customer> Customers { get; set; }
-        public virtual DbSet<Order> Orders { get; set; }
+        public virtual DbSet<TranslatingOrder> TranslatingOrders { get; set; }
         public virtual DbSet<OrderDetail> OrderDetails { get; set; }
         public virtual DbSet<PriceList> PriceLists { get; set; }
         public virtual DbSet<CampaignItem> CampaignItems { get; set; }
         public virtual DbSet<CompanyPriceOffer> CompanyPriceOffers { get; set; }
+        public virtual DbSet<SimultaneousTranslatingOrder> SimultaneousTranslatingOrders { get; set; }
+        public virtual DbSet<SimultaneousTranslatingOrderEquipment> SimultaneousTranslatingOrderEquipments { get; set; }
+        public virtual DbSet<SimultaneousTranslatingOrderTranslator> SimultaneousTranslatingOrderTranslators { get; set; }
 
         #endregion
 
@@ -85,6 +89,7 @@ namespace Tangent.CeviriDukkani.Data.Model
         public virtual DbSet<UserScoreTransaction> UserScoreTransactions { get; set; }
         public virtual DbSet<MailItem> Mail { get; set; }
         public virtual DbSet<AccountRegistration> AccountRegistrations { get; set; }
+
 
         #endregion
 

@@ -88,6 +88,14 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
                 a.CreateMap<DocumentAuditDto, DocumentAudit>();
                 a.CreateMap<CampaignItemDto, CampaignItem>();
                 a.CreateMap<CompanyPriceOfferDto, CompanyPriceOffer>();
+
+                a.CreateMap<SimultaneousTranslatingOrderDto, SimultaneousTranslatingOrder>();
+                a.CreateMap<SimultaneousTranslatingOrderEquipmentDto, SimultaneousTranslatingOrderEquipment>();
+                a.CreateMap<SimultaneousTranslatingOrderTranslatorDto, SimultaneousTranslatingOrderTranslator>();
+                a.CreateMap<TranslatingOrderDto, TranslatingOrder>();
+                a.CreateMap<EquipmentDto, Equipment>();
+                a.CreateMap<AccountRegistrationDto, AccountRegistration>();
+
                 //Entity -> Dto
 
                 a.CreateMap<BaseEntity, BaseDto>();
@@ -156,6 +164,13 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
                 a.CreateMap<DocumentAudit, DocumentAuditDto>();
                 a.CreateMap<CampaignItem, CampaignItemDto>();
                 a.CreateMap<CompanyPriceOffer, CompanyPriceOfferDto>();
+
+                a.CreateMap<SimultaneousTranslatingOrder, SimultaneousTranslatingOrderDto>();
+                a.CreateMap<SimultaneousTranslatingOrderEquipment, SimultaneousTranslatingOrderEquipmentDto>();
+                a.CreateMap<SimultaneousTranslatingOrderTranslator, SimultaneousTranslatingOrderTranslatorDto>();
+                a.CreateMap<TranslatingOrder, TranslatingOrderDto>();
+                a.CreateMap<Equipment, EquipmentDto>();
+                a.CreateMap<AccountRegistration, AccountRegistrationDto>();
 
             });
 
