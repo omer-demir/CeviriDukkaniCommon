@@ -6,7 +6,7 @@ using Tangent.CeviriDukkani.Domain.Entities.Document;
 using Tangent.CeviriDukkani.Domain.Entities.Translation;
 
 namespace Tangent.CeviriDukkani.Domain.Entities.Sale {
-    public class Order:BaseEntity {
+    public abstract class Order:BaseEntity {
 
         public int CustomerId { get; set; }
         public virtual Customer Customer { get; set; }

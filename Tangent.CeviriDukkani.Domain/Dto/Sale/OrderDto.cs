@@ -6,7 +6,7 @@ using Tangent.CeviriDukkani.Domain.Dto.Enums;
 using Tangent.CeviriDukkani.Domain.Dto.Translation;
 
 namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
-    public class OrderDto : BaseDto {
+    public abstract class OrderDto : BaseDto {
         public int CustomerId { get; set; }
         public virtual CustomerDto Customer { get; set; }
 
