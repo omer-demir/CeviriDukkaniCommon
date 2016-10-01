@@ -14,7 +14,7 @@ namespace Tangent.CeviriDukkani.Domain.Entities.Sale {
         public int SourceLanguageId { get; set; }
         public virtual Language SourceLanguage { get; set; }
 
-        public virtual List<OrderTargetLanguage> TargetLanguages { get; set; }
+
 
         public int TerminologyId { get; set; }
         public virtual Terminology Terminology { get; set; }

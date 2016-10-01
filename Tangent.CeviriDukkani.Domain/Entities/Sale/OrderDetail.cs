@@ -4,8 +4,8 @@ using Tangent.CeviriDukkani.Domain.Entities.Translation;
 namespace Tangent.CeviriDukkani.Domain.Entities.Sale {
     [Table("OrderDetail", Schema = "Sale")]
     public class OrderDetail:BaseEntity {
-        public int OrderId { get; set; }
-        public virtual Order Order { get; set; }
+        public int TranslatingOrderId { get; set; }
+        public virtual TranslatingOrder TranslatingOrder { get; set; }
 
         public int TranslationOperationId { get; set; }
         public virtual TranslationOperation TranslationOperation { get; set; }

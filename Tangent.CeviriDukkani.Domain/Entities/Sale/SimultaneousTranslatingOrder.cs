@@ -7,6 +7,8 @@ using Tangent.CeviriDukkani.Domain.Entities.System;
 namespace Tangent.CeviriDukkani.Domain.Entities.Sale {
     [Table("SimultaneousTranslatingOrder", Schema = "Order")]
     public class SimultaneousTranslatingOrder : Order {
+        public virtual List<SimultaneousTranslatingOrderTargetLanguage> TargetLanguages { get; set; }
+
         public int CityId { get; set; }
         public virtual City City { get; set; }
 

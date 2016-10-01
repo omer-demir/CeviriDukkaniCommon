@@ -63,7 +63,6 @@
     <Compile Include="Dto\Common\MembershipTypeDto.cs" />
     <Compile Include="Dto\Common\MessageDto.cs" />
     <Compile Include="Dto\Common\OrderStatusDto.cs" />
-    <Compile Include="Dto\Common\OrderTargetLanguageDto.cs" />
     <Compile Include="Dto\Common\ScoreDto.cs" />
     <Compile Include="Dto\Common\ServiceTypeDto.cs" />
     <Compile Include="Dto\Common\SoftwareDto.cs" />
@@ -102,6 +101,8 @@
     <Compile Include="Dto\Sale\OrderDetailDto.cs" />
     <Compile Include="Dto\Sale\OrderDto.cs" />
     <Compile Include="Dto\Sale\PriceListDto.cs" />
+    <Compile Include="Dto\Sale\SimultaneousTranslatingOrderTargetLanguageDto.cs" />
+    <Compile Include="Dto\Sale\TranslatingOrderTargetLanguageDto.cs" />
     <Compile Include="Dto\System\AccountRegistrationDto.cs" />
     <Compile Include="Dto\Sale\SimultaneousTranslatingOrderDto.cs" />
     <Compile Include="Dto\Sale\SimultaneousTranslatingOrderEquipmentDto.cs" />
@@ -145,7 +146,8 @@
     <Compile Include="Entities\Common\MembershipType.cs" />
     <Compile Include="Entities\Common\Message.cs" />
     <Compile Include="Entities\Common\OrderStatus.cs" />
-    <Compile Include="Entities\Common\OrderTargetLanguage.cs" />
+    <Compile Include="Entities\Sale\SimultaneousTranslatingOrderTargetLanguage.cs" />
+    <Compile Include="Entities\Sale\TranslatingOrderTargetLanguage.cs" />
     <Compile Include="Entities\Common\Score.cs" />
     <Compile Include="Entities\Common\ServiceType.cs" />
     <Compile Include="Entities\Common\Software.cs" />

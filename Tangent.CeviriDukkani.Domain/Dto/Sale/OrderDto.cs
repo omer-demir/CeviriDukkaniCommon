@@ -13,8 +13,6 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
         public int SourceLanguageId { get; set; }
         public virtual LanguageDto SourceLanguage { get; set; }
 
-        public virtual List<OrderTargetLanguageDto> TargetLanguages { get; set; }
-
         public int TerminologyId { get; set; }
         public virtual TerminologyDto Terminology { get; set; }
 
@@ -30,13 +28,6 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
         public int? CampaignItemId { get; set; }
         public virtual CampaignItemDto CampaignItem { get; set; }
 
-        public string TargetLanguagesAsString {
-            get {
-                if (TargetLanguages != null && TargetLanguages.Any()) {
-                    return string.Join(",", TargetLanguages.Select(a => a.Language.Name));
-                }
-                return "";
-            }
-        }
+        
     }
 }

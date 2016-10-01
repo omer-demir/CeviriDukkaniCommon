@@ -8,6 +8,8 @@ using Tangent.CeviriDukkani.Domain.Entities.Translation;
 namespace Tangent.CeviriDukkani.Domain.Entities.Sale {
     [Table("TranslatingOrder", Schema = "Order")]
     public class TranslatingOrder:Order {
+        public virtual List<TranslatingOrderTargetLanguage> TargetLanguages { get; set; }
+
         public int TranslationDocumentId { get; set; }
         public virtual TranslationDocument TranslationDocument { get; set; }
 

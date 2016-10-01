@@ -54,7 +54,8 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
                 a.CreateMap<UserRoleTypeDto, UserRoleType>();
                 a.CreateMap<WorkingTypeDto, WorkingType>();
                 a.CreateMap<TongueDto, Tongue>();
-                a.CreateMap<OrderTargetLanguageDto, OrderTargetLanguage>();
+                a.CreateMap<TranslatingOrderTargetLanguageDto, TranslatingOrderTargetLanguage>();
+                a.CreateMap<SimultaneousTranslatingOrderTargetLanguageDto, SimultaneousTranslatingOrderTargetLanguage>();
 
                 a.CreateMap<DocumentDto, Document>();
                 a.CreateMap<TranslationDocumentPartDto, TranslationDocumentPart>();
@@ -129,7 +130,8 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
                 a.CreateMap<UserRoleType, UserRoleTypeDto>();
                 a.CreateMap<WorkingType, WorkingTypeDto>();
                 a.CreateMap<Tongue, TongueDto>();
-                a.CreateMap<OrderTargetLanguage, OrderTargetLanguageDto>().ForMember(b=>b.Order,b=>b.Ignore());
+                a.CreateMap<TranslatingOrderTargetLanguage, TranslatingOrderTargetLanguageDto>().ForMember(b => b.TranslatingOrder, b => b.Ignore());
+                a.CreateMap<SimultaneousTranslatingOrderTargetLanguage, SimultaneousTranslatingOrderTargetLanguageDto>().ForMember(b => b.SimultaneousTranslatingOrder, b => b.Ignore());
 
                 a.CreateMap<Document, DocumentDto>();
                 a.CreateMap<TranslationDocumentPart, TranslationDocumentPartDto>();

@@ -1,9 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Tangent.CeviriDukkani.Domain.Dto.Common;
 
 namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
     public class SimultaneousTranslatingOrderDto:OrderDto {
+        public virtual List<SimultaneousTranslatingOrderTargetLanguageDto> TargetLanguages { get; set; }
+
+
         public int CityId { get; set; }
         public virtual CityDto City { get; set; }
 
@@ -16,5 +20,14 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
 
         public virtual List<SimultaneousTranslatingOrderEquipmentDto> Equipments { get; set; }
         public virtual List<SimultaneousTranslatingOrderTranslatorDto> Translators { get; set; }
+
+        public string TargetLanguagesAsString {
+            get {
+                if (TargetLanguages != null && TargetLanguages.Any()) {
+                    return string.Join(",", TargetLanguages.Select(a => a.Language.Name));
+                }
+                return "";
+            }
+        }
     }
 }
