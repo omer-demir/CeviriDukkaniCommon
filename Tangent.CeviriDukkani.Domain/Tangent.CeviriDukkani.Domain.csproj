@@ -101,6 +101,7 @@
     <Compile Include="Dto\Sale\OrderDetailDto.cs" />
     <Compile Include="Dto\Sale\OrderDto.cs" />
     <Compile Include="Dto\Sale\PriceListDto.cs" />
+    <Compile Include="Dto\System\AccountRegistrationDto.cs" />
     <Compile Include="Dto\System\MailDataDto.cs" />
     <Compile Include="Dto\System\RateItemDto.cs" />
     <Compile Include="Dto\System\TechnologyKnowledgeDto.cs" />
@@ -164,6 +165,7 @@
     <Compile Include="Entities\Sale\Order.cs" />
     <Compile Include="Entities\Sale\OrderDetail.cs" />
     <Compile Include="Entities\Sale\PriceList.cs" />
+    <Compile Include="Entities\System\AccountRegistration.cs" />
     <Compile Include="Entities\System\MailItem.cs" />
     <Compile Include="Entities\System\MailTarget.cs" />
     <Compile Include="Entities\System\RateItem.cs" />
