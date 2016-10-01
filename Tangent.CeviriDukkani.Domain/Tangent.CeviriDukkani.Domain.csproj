@@ -56,6 +56,7 @@
     <Compile Include="Dto\Common\CountryDto.cs" />
     <Compile Include="Dto\Common\CurrencyDto.cs" />
     <Compile Include="Dto\Common\DistrictDto.cs" />
+    <Compile Include="Dto\Common\EquipmentDto.cs" />
     <Compile Include="Dto\Common\GenderDto.cs" />
     <Compile Include="Dto\Common\GeneralDocumentTypeDto.cs" />
     <Compile Include="Dto\Common\LanguageDto.cs" />
@@ -101,7 +102,14 @@
     <Compile Include="Dto\Sale\OrderDetailDto.cs" />
     <Compile Include="Dto\Sale\OrderDto.cs" />
     <Compile Include="Dto\Sale\PriceListDto.cs" />
+<<<<<<< b5e2579052aacbee9ba2365d14de35f25f518112
     <Compile Include="Dto\System\AccountRegistrationDto.cs" />
+=======
+    <Compile Include="Dto\Sale\SimultaneousTranslatingOrderDto.cs" />
+    <Compile Include="Dto\Sale\SimultaneousTranslatingOrderEquipmentDto.cs" />
+    <Compile Include="Dto\Sale\SimultaneousTranslatingOrderTranslatorDto.cs" />
+    <Compile Include="Dto\Sale\TranslatingOrderDto.cs" />
+>>>>>>> simultaenous translation added
     <Compile Include="Dto\System\MailDataDto.cs" />
     <Compile Include="Dto\System\RateItemDto.cs" />
     <Compile Include="Dto\System\TechnologyKnowledgeDto.cs" />
@@ -133,6 +141,7 @@
     <Compile Include="Entities\Common\Country.cs" />
     <Compile Include="Entities\Common\Currency.cs" />
     <Compile Include="Entities\Common\District.cs" />
+    <Compile Include="Entities\Common\Equipment.cs" />
     <Compile Include="Entities\Common\Gender.cs" />
     <Compile Include="Entities\Common\GeneralDocumentType.cs" />
     <Compile Include="Entities\Common\Language.cs" />
@@ -165,7 +174,14 @@
     <Compile Include="Entities\Sale\Order.cs" />
     <Compile Include="Entities\Sale\OrderDetail.cs" />
     <Compile Include="Entities\Sale\PriceList.cs" />
+<<<<<<< b5e2579052aacbee9ba2365d14de35f25f518112
     <Compile Include="Entities\System\AccountRegistration.cs" />
+=======
+    <Compile Include="Entities\Sale\SimultaneousTranslatingOrder.cs" />
+    <Compile Include="Entities\Sale\SimultaneousTranslatingOrderEquipment.cs" />
+    <Compile Include="Entities\Sale\SimultaneousTranslatingOrderTranslator.cs" />
+    <Compile Include="Entities\Sale\TranslatingOrder.cs" />
+>>>>>>> simultaenous translation added
     <Compile Include="Entities\System\MailItem.cs" />
     <Compile Include="Entities\System\MailTarget.cs" />
     <Compile Include="Entities\System\RateItem.cs" />

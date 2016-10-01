@@ -7,9 +7,6 @@ using Tangent.CeviriDukkani.Domain.Dto.Translation;
 
 namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
     public class OrderDto : BaseDto {
-        public int DocumentId { get; set; }
-        public virtual Document.DocumentDto Document { get; set; }
-
         public int CustomerId { get; set; }
         public virtual CustomerDto Customer { get; set; }
 
@@ -24,18 +21,8 @@ namespace Tangent.CeviriDukkani.Domain.Dto.Sale {
         public int? CompanyTerminologyId { get; set; }
         public virtual CompanyTerminologyDto CompanyTerminology { get; set; }
 
-        public int? CompanyDocumentTemplateId { get; set; }
-        public virtual CompanyDocumentTemplateDto CompanyDocumentTemplate { get; set; }
-
-        public int TranslationQualityId { get; set; }
-        public TranslationQualityDto TranslationQuality { get; set; }
-
         public decimal CalculatedPrice { get; set; }
         public decimal VatPrice { get; set; }
-
-        public DateTime? OrderPotentialDeliveryDate { get; set; }
-
-        public virtual List<OrderDetailDto> OrderDetails { get; set; }
 
         public int OrderStatusId { get; set; }
         public OrderStatusDto OrderStatus { get; set; }
