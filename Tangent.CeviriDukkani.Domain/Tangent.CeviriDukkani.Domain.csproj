@@ -94,6 +94,7 @@
     <Compile Include="Dto\Request\MessageRequestDto.cs" />
     <Compile Include="Dto\Request\SendMailRequestDto.cs" />
     <Compile Include="Dto\Request\UpdateDocumentPartContentRequestDto.cs" />
+    <Compile Include="Dto\Request\UpdateUserStepRequestDto.cs" />
     <Compile Include="Dto\Response\DocumentUploadResponseDto.cs" />
     <Compile Include="Dto\Sale\CampaignItemDto.cs" />
     <Compile Include="Dto\Sale\CompanyPriceOfferDto.cs" />
