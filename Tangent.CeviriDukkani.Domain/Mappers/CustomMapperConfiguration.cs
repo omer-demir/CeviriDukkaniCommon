@@ -97,6 +97,8 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
                 a.CreateMap<EquipmentDto, Equipment>();
                 a.CreateMap<AccountRegistrationDto, AccountRegistration>();
 
+                a.CreateMap<CareerItemDto, CareerItem>();
+
                 //Entity -> Dto
 
                 a.CreateMap<BaseEntity, BaseDto>();
@@ -173,6 +175,7 @@ namespace Tangent.CeviriDukkani.Domain.Mappers {
                 a.CreateMap<TranslatingOrder, TranslatingOrderDto>();
                 a.CreateMap<Equipment, EquipmentDto>();
                 a.CreateMap<AccountRegistration, AccountRegistrationDto>();
+                a.CreateMap<CareerItem, CareerItemDto>();
 
             });
 

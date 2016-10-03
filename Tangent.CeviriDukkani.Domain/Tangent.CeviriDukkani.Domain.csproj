@@ -48,6 +48,7 @@
     <Compile Include="Dto\Common\BankAccountDto.cs" />
     <Compile Include="Dto\Common\BankAccountTypeDto.cs" />
     <Compile Include="Dto\Common\CapacityDto.cs" />
+    <Compile Include="Dto\Common\CareerItemDto.cs" />
     <Compile Include="Dto\Common\CityDto.cs" />
     <Compile Include="Dto\Common\CommentDto.cs" />
     <Compile Include="Dto\Common\CompanyDto.cs" />
@@ -132,6 +133,7 @@
     <Compile Include="Entities\Common\BankAccount.cs" />
     <Compile Include="Entities\Common\BankAccountType.cs" />
     <Compile Include="Entities\Common\Capacity.cs" />
+    <Compile Include="Entities\Common\CareerItem.cs" />
     <Compile Include="Entities\Common\City.cs" />
     <Compile Include="Entities\Common\Comment.cs" />
     <Compile Include="Entities\Common\Company.cs" />
