@@ -1,7 +1,5 @@
-﻿namespace Tangent.CeviriDukkani.Domain.Dto.Enums
-{
-    public enum UserRoleTypeEnum
-    {
+﻿namespace Tangent.CeviriDukkani.Domain.Dto.Enums {
+    public enum UserRoleTypeEnum {
         Translator = 1,
         Editor,
         Admin,
@@ -85,8 +83,7 @@
         Advertisement = 3
     }
 
-    public enum MailTypeEnum
-    {
+    public enum MailTypeEnum {
         AdminTestOnayla,
         BireyselRegistration,
         CeviriTamamlandi,
@@ -115,5 +112,10 @@
         TestTercumeOnaylandi,
         TestTercumeRedEdildi,
         TranslatorWelcomingMail
+    }
+
+    public enum WorkingTypeEnum {
+        PerCharacter,
+        PerWord
     }
 }

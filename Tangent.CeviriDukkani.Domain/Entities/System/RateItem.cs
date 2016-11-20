@@ -16,6 +16,9 @@ namespace Tangent.CeviriDukkani.Domain.Entities.System {
 
         public decimal Price { get; set; }
 
+        public int CurrencyId { get; set; }
+        public virtual Currency Currency { get; set; }
+
         public bool? SwornOrCertified { get; set; }
         public int? CertificateId { get; set; }
         public virtual UserDocument Certificate { get; set; }
