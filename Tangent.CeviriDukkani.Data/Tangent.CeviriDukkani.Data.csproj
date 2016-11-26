@@ -52,7 +52,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
     <Reference Include="Tangent.CeviriDukkani.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.51\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
+      <HintPath>..\packages\CeviriDükkanıCommon.1.0.2.52\lib\Tangent.CeviriDukkani.Domain.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201610032347424_career-added.cs" />
     <Compile Include="Migrations\201610032347424_career-added.Designer.cs">
       <DependentUpon>201610032347424_career-added.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611201154559_capacti_rate_changes.cs" />
+    <Compile Include="Migrations\201611201154559_capacti_rate_changes.Designer.cs">
+      <DependentUpon>201611201154559_capacti_rate_changes.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\CeviriDukkaniModel.cs" />
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201610032347424_career-added.resx">
       <DependentUpon>201610032347424_career-added.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611201154559_capacti_rate_changes.resx">
+      <DependentUpon>201611201154559_capacti_rate_changes.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
